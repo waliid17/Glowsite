@@ -76,7 +76,7 @@ const Hero = () => {
         <Sparkles size={22} className="sm:w-7 sm:h-7" />
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -134,18 +134,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 sm:mb-6 text-logo tracking-tight leading-tight"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-3 sm:mb-4 md:mb-6 text-logo tracking-tight leading-[1.1] sm:leading-tight"
           >
             We Create
             <motion.span
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent relative"
+              className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent relative mt-1"
             >
               Stunning Websites
               {/* Angular accent matching logo */}
-              <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-3 h-3 sm:w-4 sm:h-4 bg-white transform rotate-45 opacity-80"></div>
+              <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-white transform rotate-45 opacity-80"></div>
             </motion.span>
           </motion.h1>
 
@@ -153,7 +153,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-4 sm:mb-6 md:mb-8 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 md:px-0"
           >
             Transform your digital presence with our professional web development services. 
             Get a <span className="text-yellow-400 font-semibold">FREE DEMO</span> and see the magic happen.
@@ -163,7 +163,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-3 sm:px-4 md:px-0"
           >
             <motion.a
               href="#contact"
@@ -195,7 +195,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 max-w-2xl mx-auto px-4 sm:px-0"
+            className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 mt-8 sm:mt-12 md:mt-16 max-w-2xl mx-auto px-2 sm:px-4 md:px-0"
           >
             {[
               { number: '100+', label: 'Sites Web Créés' },
@@ -207,10 +207,10 @@ const Hero = () => {
                 whileHover={{ y: -5 }}
                 className="text-center"
               >
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-blue-200 text-xs sm:text-sm md:text-base leading-tight">
+                <div className="text-blue-200 text-xs sm:text-sm md:text-base leading-tight px-1">
                   {stat.label}
                 </div>
               </motion.div>
