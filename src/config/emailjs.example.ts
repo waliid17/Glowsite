@@ -4,13 +4,13 @@
 
 export const EMAILJS_CONFIG = {
   // Your EmailJS service ID
-  SERVICE_ID: 'your_service_id_here',
+  SERVICE_ID: 'service_k6pjnw9',
   
   // Your EmailJS template ID
-  TEMPLATE_ID: 'your_template_id_here',
+  TEMPLATE_ID: 'template_ygppfla',
   
   // Your EmailJS public key
-  PUBLIC_KEY: 'your_public_key_here'
+  PUBLIC_KEY: 'eu4akFeR8PsyyekNc'
 };
 
 // Email template variables

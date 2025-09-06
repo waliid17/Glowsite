@@ -4,7 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Check, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG, EmailTemplateParams } from '../config/emailjs';
+import { EMAILJS_CONFIG, EmailTemplateParams } from '../config/emailjs.example';
 
 const Contact = () => {
   const ref = useRef(null);
