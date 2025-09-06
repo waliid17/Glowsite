@@ -63,18 +63,6 @@ const Hero = () => {
       >
         <Sparkles size={24} className="sm:w-8 sm:h-8" />
       </motion.div>
-      <motion.div
-        animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 2 } }}
-        className="absolute bottom-32 right-2 sm:bottom-40 sm:right-4 md:right-20 text-white"
-      >
-        <Sparkles size={22} className="sm:w-7 sm:h-7" />
-      </motion.div>
-      <motion.div
-        animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 2 } }}
-        className="absolute bottom-32 left-2 sm:bottom-40 sm:left-4 md:left-20 text-white"
-      >
-        <Sparkles size={22} className="sm:w-7 sm:h-7" />
-      </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 text-center">
         <motion.div
@@ -220,16 +208,17 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer flex flex-col items-center"
-      >
+      <div className="absolute bottom-8 xs:bottom-10 sm:bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="cursor-pointer flex flex-col items-center"
+        >
         <motion.p
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-white/70 text-xs mb-2 font-medium tracking-wide"
+          className="text-white/70 text-xs xs:text-sm sm:text-base mb-1 xs:mb-2 font-medium tracking-wide"
         >
           Scroll Down
         </motion.p>
@@ -246,10 +235,10 @@ const Hero = () => {
             y: 0,
             transition: { duration: 0.3 }
           }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center hover:border-white/80 transition-colors duration-300"
+          className="w-5 h-8 xs:w-6 xs:h-10 sm:w-7 sm:h-12 border-2 border-white/50 rounded-full flex justify-center hover:border-white/80 transition-colors duration-300"
         >
           <motion.div
-            animate={{ y: [0, 12, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ 
               duration: 2, 
               repeat: Infinity, 
@@ -260,10 +249,11 @@ const Hero = () => {
               y: 0,
               transition: { duration: 0.3 }
             }}
-            className="w-1 h-3 bg-white rounded-full mt-2 hover:bg-blue-200 transition-colors duration-300"
+            className="w-1 h-2 xs:w-1 xs:h-3 sm:w-1.5 sm:h-4 bg-white rounded-full mt-1 xs:mt-2 hover:bg-blue-200 transition-colors duration-300"
           />
         </motion.div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

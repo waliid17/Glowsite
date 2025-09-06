@@ -215,6 +215,32 @@ select:focus {
   box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
 }
 
+/* Floating stars responsive positioning */
+.floating-star {
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Bottom stars positioning to avoid text interference */
+@media (max-width: 640px) {
+  .floating-star {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 475px) {
+  .floating-star {
+    opacity: 0.6;
+  }
+}
+
+/* Ensure bottom stars don't interfere with stats section */
+@media (max-width: 375px) {
+  .floating-star {
+    opacity: 0.4;
+  }
+}
+
 /* Mobile text compression fixes */
 @media (max-width: 475px) {
   .hero-title {
