@@ -214,3 +214,41 @@ select:focus {
 .shadow-glow-purple {
   box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
 }
+
+/* Mobile text compression fixes */
+@media (max-width: 475px) {
+  .hero-title {
+    font-size: 1.25rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.01em !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    max-width: 18rem !important;
+  }
+  
+  .hero-buttons {
+    gap: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  .hero-button {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .hero-stats {
+    gap: 0.25rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .hero-stat-number {
+    font-size: 1rem !important;
+  }
+  
+  .hero-stat-label {
+    font-size: 0.75rem !important;
+  }
+}

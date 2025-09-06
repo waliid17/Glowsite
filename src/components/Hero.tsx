@@ -76,7 +76,7 @@ const Hero = () => {
         <Sparkles size={22} className="sm:w-7 sm:h-7" />
       </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-3 sm:mb-4 md:mb-6 text-logo tracking-tight leading-[1.1] sm:leading-tight"
+            className="hero-title text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-logo tracking-tight leading-[1.05] sm:leading-[1.1] md:leading-tight"
           >
             We Create
             <motion.span
@@ -153,7 +153,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-4 sm:mb-6 md:mb-8 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 md:px-0"
+            className="hero-subtitle text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-3 sm:mb-4 md:mb-6 lg:mb-8 max-w-xl xs:max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-2 xs:px-3 sm:px-4 md:px-0"
           >
             Transform your digital presence with our professional web development services. 
             Get a <span className="text-yellow-400 font-semibold">FREE DEMO</span> and see the magic happen.
@@ -163,13 +163,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-3 sm:px-4 md:px-0"
+            className="hero-buttons flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center px-2 xs:px-3 sm:px-4 md:px-0"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-semibold text-base sm:text-lg flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden"
+              className="hero-button group w-full sm:w-auto px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-semibold text-sm xs:text-base sm:text-lg flex items-center justify-center gap-1 xs:gap-2 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden"
             >
               Obtenez Votre Démo Gratuite
               <ArrowRight 
@@ -182,7 +182,7 @@ const Hero = () => {
               href="#portfolio"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 text-white rounded-full font-black text-base sm:text-lg hover:bg-white/10 backdrop-blur-sm transition-all text-logo relative inline-block text-center"
+              className="hero-button w-full sm:w-auto px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 border-2 border-white/30 text-white rounded-full font-black text-sm xs:text-base sm:text-lg hover:bg-white/10 backdrop-blur-sm transition-all text-logo relative inline-block text-center"
             >
               Voir Nos Réalisations
               {/* Small sparkle accent */}
@@ -195,7 +195,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 mt-8 sm:mt-12 md:mt-16 max-w-2xl mx-auto px-2 sm:px-4 md:px-0"
+            className="hero-stats grid grid-cols-3 gap-1 xs:gap-2 sm:gap-4 md:gap-8 mt-6 sm:mt-8 md:mt-12 lg:mt-16 max-w-2xl mx-auto px-1 xs:px-2 sm:px-4 md:px-0"
           >
             {[
               { number: '100+', label: 'Sites Web Créés' },
@@ -207,10 +207,10 @@ const Hero = () => {
                 whileHover={{ y: -5 }}
                 className="text-center"
               >
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">
+                <div className="hero-stat-number text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-blue-200 text-xs sm:text-sm md:text-base leading-tight px-1">
+                <div className="hero-stat-label text-blue-200 text-xs sm:text-sm md:text-base leading-tight px-1">
                   {stat.label}
                 </div>
               </motion.div>
