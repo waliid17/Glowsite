@@ -26,7 +26,7 @@ const Portfolio = () => {
       image: '/SAMRAE DRESS.mp4',
       description: 'Site e-commerce moderne pour boutique de vêtements avec catalogue élégant et expérience utilisateur optimisée.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-      liveUrl: 'https://samrae-dress.wuaze.com',
+      liveUrl: '#',
       githubUrl: '#'
     },
     {
@@ -122,27 +122,19 @@ const Portfolio = () => {
               }}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative h-[800px] md:h-80 lg:h-80"
             >
-              {/* Fallback background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500"></div>
-              
-              {project.id <= 5 ? (
+                                            {project.id <= 5 ? (
                 <motion.video
                   initial={{ scale: 1.1, opacity: 0 }}
                   animate={cardInView ? { scale: 1, opacity: 1 } : { scale: 1.1, opacity: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.15 + 0.2 }}
                   whileHover={{ scale: 1.05 }}
                   src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  onError={(e) => {
-                    console.error(`Error loading video: ${project.image}`, e);
-                    // Fallback to a placeholder or hide the video
-                    e.currentTarget.style.display = 'none';
-                  }}
-                  onLoadStart={() => console.log(`Loading video: ${project.image}`)}
                 />
               ) : (
                 <motion.img
@@ -153,10 +145,6 @@ const Portfolio = () => {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    console.error(`Error loading image: ${project.image}`, e);
-                    e.currentTarget.style.display = 'none';
-                  }}
                 />
               )}
               

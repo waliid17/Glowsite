@@ -1,5 +1,5 @@
-// EmailJS Configuration Example
-// Copy this file to emailjs.ts and replace with your actual credentials
+// EmailJS Configuration
+// You need to replace these with your actual EmailJS credentials
 // Get them from: https://www.emailjs.com/
 
 export const EMAILJS_CONFIG = {
@@ -24,4 +24,3 @@ export interface EmailTemplateParams {
   need_demo: string;
   to_email: string;
 }
-
