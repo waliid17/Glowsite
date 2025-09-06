@@ -14,6 +14,7 @@ const Portfolio = () => {
       title: 'SHEY\'S STORE',
       category: 'E-commerce',
       image: '/p1.mp4',
+      fallbackImage: '/logo.png',
       description: 'Site e-commerce élégant pour boutique avec catalogue produits, panier et dashboard.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
       liveUrl: 'https://sheys-store.wuaze.com',
@@ -24,6 +25,7 @@ const Portfolio = () => {
       title: 'SAMRAE DRESS',
       category: 'E-commerce',
       image: '/SAMRAE DRESS.mp4',
+      fallbackImage: '/logo.png',
       description: 'Site e-commerce moderne pour boutique de vêtements avec catalogue élégant et expérience utilisateur optimisée.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
       liveUrl: '#',
@@ -34,6 +36,7 @@ const Portfolio = () => {
       title: 'MAGGIE FITWEAR',
       category: 'E-commerce',
       image: '/MAGGIE FITWEAR.mp4',
+      fallbackImage: '/logo.png',
       description: 'Site e-commerce moderne pour boutique de vêtements de sport avec design responsive et expérience utilisateur optimisée.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
       liveUrl: 'https://maggie-fitwear.wuaze.com',
@@ -44,6 +47,7 @@ const Portfolio = () => {
       title: 'LAYAL',
       category: 'E-commerce',
       image: '/LAYAL.mp4',
+      fallbackImage: '/logo.png',
       description: 'Site e-commerce élégant pour boutique de mode avec interface moderne et expérience utilisateur exceptionnelle.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
       liveUrl: 'https://layal.free.nf',
@@ -54,6 +58,7 @@ const Portfolio = () => {
       title: 'BEAM JOURNALS',
       category: 'E-commerce',
       image: '/BEAM JOURNALS.mp4',
+      fallbackImage: '/logo.png',
       description: 'Plateforme e-commerce innovante pour boutique de journaux et accessoires avec design moderne et fonctionnalités avancées.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS'],
       liveUrl: 'https://beam-journals.wuaze.com',
@@ -123,19 +128,46 @@ const Portfolio = () => {
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative h-[800px] md:h-80 lg:h-80"
             >
                                             {project.id <= 5 ? (
-                <motion.video
-                  initial={{ scale: 1.1, opacity: 0 }}
-                  animate={cardInView ? { scale: 1, opacity: 1 } : { scale: 1.1, opacity: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.15 + 0.2 }}
-                  whileHover={{ scale: 1.05 }}
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <div className="relative w-full h-full">
+                  <motion.video
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    animate={cardInView ? { scale: 1, opacity: 1 } : { scale: 1.1, opacity: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.15 + 0.2 }}
+                    whileHover={{ scale: 1.05 }}
+                    src={project.image}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    onError={(e) => {
+                      console.error('Video failed to load:', project.image);
+                      // Show fallback image when video fails
+                      const fallbackImg = e.currentTarget.nextElementSibling as HTMLImageElement;
+                      if (fallbackImg) {
+                        fallbackImg.style.display = 'block';
+                        e.currentTarget.style.display = 'none';
+                      }
+                    }}
+                    onLoadStart={() => {
+                      console.log('Video loading started:', project.image);
+                    }}
+                    onCanPlay={() => {
+                      console.log('Video can play:', project.image);
+                    }}
+                  />
+                  <motion.img
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    animate={cardInView ? { scale: 1, opacity: 1 } : { scale: 1.1, opacity: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.15 + 0.2 }}
+                    whileHover={{ scale: 1.05 }}
+                    src={project.fallbackImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover absolute inset-0"
+                    style={{ display: 'none' }}
+                  />
+                </div>
               ) : (
                 <motion.img
                   initial={{ scale: 1.1, opacity: 0 }}
